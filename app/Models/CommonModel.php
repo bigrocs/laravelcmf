@@ -3,7 +3,7 @@
 namespace App\Models;
 
 /**
- * Class AdminConfig
+ * trait CommonModel
  * @package App\Models
  */
 trait CommonModel
@@ -15,7 +15,7 @@ trait CommonModel
 	 * @param    [type]                   $status        [状态操作]
 	 * @param    [type]                   $ids           [ID数据]
 	 */
-	public function setStatus($status,$ids) 
+	public function setStatus($status,$ids)
     {
         if (empty($ids)) {
             return [

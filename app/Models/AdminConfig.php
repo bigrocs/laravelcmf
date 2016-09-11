@@ -11,9 +11,9 @@ use App\Models\CommonModel;
 class AdminConfig extends Model
 {
     use CommonModel;
-    
+
     public $table = 'admin_configs';
-    
+
     public $fillable = [
         'title',
         'name',
