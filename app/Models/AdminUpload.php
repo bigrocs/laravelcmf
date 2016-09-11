@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\CommonModel;
 use Storage;
 
 /**
