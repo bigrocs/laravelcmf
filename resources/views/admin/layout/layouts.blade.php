@@ -10,55 +10,79 @@
         {{-- 后台页面级别插件BEGIN --}}
             @yield('pageCss')
         {{-- 后台页面级别插件END --}}
-        {{-- 后台全局主题样式BEGIN --}}
-        <link href="{{ asset('assets/global/css/components-md.css') }}" rel="stylesheet" id="style_components" type="text/css" />
-        <link href="{{ asset('assets/global/css/plugins.css') }}" rel="stylesheet" type="text/css" />
-        {{-- 后台全局主题样式END --}}
-        {{-- 后台LAYOUT布局主题样式BEGIN --}}
-        <link href="{{ asset('assets/layouts/layout/css/layout.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('assets/layouts/layout/css/themes/darkblue.css') }}" rel="stylesheet" type="text/css" id="style_color" />
-        {{-- 后台LAYOUT布局主题样式END --}}
 @endsection
 
 @section('content')
-    <header class="main-header">
-        {{--<!-- Logo -->--}}
-        <a href="{{ route('admin.index') }}" class="logo">
-            {{--<!-- mini logo for sidebar mini 50x50 pixels -->--}}
-            <span class="logo-mini"><b>C</b>MF</span>
-            {{--<!-- logo for regular state and mobile devices -->--}}
-            <span class="logo-lg"><b>Laravel</b>CMF</span>
-        </a>
-        {{--<!-- Header Navbar: style can be found in header.less -->--}}
-        <nav class="navbar navbar-static-top">
-            {{--<!-- Sidebar toggle button-->>--}}
-            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-        </nav>
-    </header>
-    @yield('pageContent')
+            {{-- 后台header头部BEGIN --}}
+            <header class="main-header">
+                {{--<!-- Logo -->--}}
+                <a href="{{ route('admin.index') }}" class="logo">
+                    {{--<!-- mini logo for sidebar mini 50x50 pixels -->--}}
+                    <span class="logo-mini"><b>C</b>MF</span>
+                    {{--<!-- logo for regular state and mobile devices -->--}}
+                    <span class="logo-lg"><b>Laravel</b>CMF</span>
+                </a>
+                {{--<!-- Header Navbar: style can be found in header.less -->--}}
+                <nav class="navbar navbar-static-top">
+                    {{--<!-- Sidebar toggle button-->--}}
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <div class="navbar-custom-menu">
+                        {{--<!-- 后期增加登陆信息等-->--}}
+                    </div>
+                </nav>
+            </header>
+            {{-- 后台header头部END --}}
+            {{-- <!-- Left side column. contains the logo and sidebar --> --}}
+            <aside class="main-sidebar">
+                {{-- <!-- sidebar: style can be found in sidebar.less --> --}}
+                <section class="sidebar">
+                    {{-- <!-- 用户登录状态显示 Sidebar user panel --> --}}
+                    <div class="user-panel">
+                        <div class="pull-left image">
+                            <img src="//cdn.bootcss.com/admin-lte/2.3.6/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        </div>
+                        <div class="pull-left info">
+                            <p>LaravelCMF Admin</p>
+                            <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
+                        </div>
+                    </div>
+                    {{-- <!-- 搜索功能  search form --> --}}
+                    <form action="#" method="get" class="sidebar-form">
+                        <div class="input-group">
+                            <input type="text" name="q" class="form-control" placeholder="搜索Search...">
+                            <span class="input-group-btn">
+                                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </form>
+                    {{-- <!-- /.search form --> --}}
+                    {{-- <!-- sidebar menu: : style can be found in sidebar.less --> --}}
+                    <ul class="sidebar-menu">
+                        {{--<!-- 导航位置定义 -->--}}
+                    </ul>
+                </section>
+                {{--<!-- /.sidebar -->--}}
+            </aside>
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                @yield('pageContent')
+            </div>
 @endsection
 @section('js')
         {{-- JS后台核心插件BEGIN --}}
+        {{-- <!-- 页面滚动插件 SlimScroll--> --}}
+        <script src="//cdn.bootcss.com/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
+        {{-- <!-- 快速点击插件 fastClick--> --}}
         <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.js"></script>
         <script src="//cdn.bootcss.com/admin-lte/2.3.6/js/app.min.js"></script>
         {{-- JS后台核心插件END --}}
-        {{-- JS后台全局脚本BEGIN --}}
-        <script src="{{ asset('assets/global/scripts/app.js') }}" type="text/javascript"></script>
-        {{-- JS后台全局脚本END --}}
         {{-- JS后台页面级别插件BEGIN --}}
 @yield('pageJs')
         {{-- JS后台页面级别插件END --}}
-        {{-- JS后台页面级别脚本BEGIN --}}
-        <script src="{{ asset('assets/pages/scripts/dashboard.js') }}" type="text/javascript"></script>
-        {{-- JS后台页面级别脚本END --}}
-        {{-- 后台LAYOUT布局主题脚本BEGIN --}}
-        <script src="{{ asset('assets/layouts/layout/scripts/layout.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('assets/layouts/layout/scripts/demo.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('assets/layouts/global/scripts/quick-sidebar.js') }}" type="text/javascript"></script>
-        {{-- 后台LAYOUT布局主题脚本BEGINEND --}}
 @endsection

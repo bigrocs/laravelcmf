@@ -21,7 +21,7 @@
             <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
-    <body class="hold-transition skin-blue sidebar-mini">
+    <body class="skin-blue sidebar-mini fixed">
         <div class="wrapper">
             @yield('content')
         </div>
