@@ -12,93 +12,61 @@ return [
     | icon          图标
     |
     */
-    [
-        'navName' => 'admin.index',
-        'parentName'=> '',
-        'name'      => '首页 Dashboard',
+    0 => [
+        'name' => '首页 Dashboard',
         'routeName' => 'admin.index',
-        'icon'      => 'icon-home',
-        'header'    => false,
+        'icon' => 'icon-home',
     ],
-    [
-        'navName' => 'admin.system',
-        'parentName'=> '',
-        'name'      => '系统 system',
+    1 => [
+        'name' => '系统 system',
+        'uppercase' => 'on',
         'routeName' => '',
-        'icon'      => '',
-        'header'    => true,
+        'icon' => '',
+        'subNav' => [
+            0 => [
+                'name' => '系统功能',
+                'routeName' => '',
+                'icon' => 'fa fa-cog',
+                'subNav' => [
+                    0 => [
+                        'name' => '系统设置',
+                        'routeName' => 'admin.system',
+                        'icon' => 'fa fa-wrench',
+                    ],
+                    1 => [
+                        'name' => '配置管理',
+                        'routeName' => 'admin.config',
+                        'icon' => 'fa fa-cogs',
+                    ],
+                    2 => [
+                        'name' => '上传管理',
+                        'routeName' => 'admin.upload',
+                        'icon' => 'fa fa-upload',
+                    ],
+                ],
+            ],
+            1 => [
+                'name' => '应用中心',
+                'routeName' => '',
+                'icon' => 'fa fa-folder-open-o',
+                'subNav' => [
+                    0 => [
+                        'name' => '模块扩展',
+                        'routeName' => 'admin.model',
+                        'icon' => 'fa fa-th-large',
+                    ],
+                    1 => [
+                        'name' => '插件管理',
+                        'routeName' => 'admin.addon',
+                        'icon' => 'fa fa-th',
+                    ],
+                    2 => [
+                        'name' => '主题管理',
+                        'routeName' => 'admin.theme',
+                        'icon' => 'fa fa-adjust',
+                    ],
+                ],
+            ],
+        ],
     ],
-        [
-            'navName' => 'admin.system.function',
-            'parentName'=> 'admin.system',
-            'name'      => '系统功能',
-            'routeName' => '',
-            'icon'      => 'fa fa-cog',
-            'header'    => false,
-        ],
-            [
-                'navName' => 'admin.system.function.system',
-                'parentName'=> 'admin.system.function',
-                'name'      => '系统设置',
-                'routeName' => 'admin.system',
-                'icon'      => 'fa fa-wrench',
-                'header'    => false,
-            ],
-            [
-                'navName' => 'admin.system.function.config',
-                'parentName'=> 'admin.system.function',
-                'name'      => '配置管理',
-                'routeName' => 'admin.config',
-                'icon'      => 'fa fa-cogs',
-                'header'    => false,
-            ],
-            [
-                'navName' => 'admin.system.function.upload',
-                'parentName'=> 'admin.system.function',
-                'name'      => '上传管理',
-                'routeName' => 'admin.config',
-                'icon'      => 'fa fa-upload',
-                'header'    => false,
-            ],
-        [
-            'navName' => 'admin.system.application',
-            'parentName'=> 'admin.system',
-            'name'      => '应用中心',
-            'routeName' => '',
-            'icon'      => 'fa fa-folder-open-o',
-            'header'    => false,
-        ],
-            [
-                'navName' => 'admin.system.application.model',
-                'parentName'=> 'admin.system.application',
-                'name'      => '模块扩展',
-                'routeName' => 'admin.model',
-                'icon'      => 'fa fa-th-large',
-                'header'    => false,
-            ],
-            [
-                'navName' => 'admin.system.application.model',
-                'parentName'=> 'admin.system.application',
-                'name'      => '模块扩展',
-                'routeName' => 'admin.model',
-                'icon'      => 'fa fa-th-large',
-                'header'    => false,
-            ],
-            [
-                'navName' => 'admin.system.application.addon',
-                'parentName'=> 'admin.system.application',
-                'name'      => '插件管理',
-                'routeName' => 'admin.addon',
-                'icon'      => 'fa fa-th',
-                'header'    => false,
-            ],
-            [
-                'navName' => 'admin.system.application.theme',
-                'parentName'=> 'admin.system.application',
-                'name'      => '主题管理',
-                'routeName' => 'admin.theme',
-                'icon'      => 'fa fa-adjust',
-                'header'    => false,
-            ],
-
 ];
