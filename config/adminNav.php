@@ -13,23 +13,23 @@ return [
     |
     */
     [
-        'navName' => 'admin.index',
-        'parentName'=> '',
+        'navName'   => 'admin.index',
+        'parentName'=> 'top',
         'name'      => '首页 Dashboard',
         'routeName' => 'admin.index',
         'icon'      => 'icon-home',
         'header'    => false,
     ],
     [
-        'navName' => 'admin.system',
-        'parentName'=> '',
+        'navName'   => 'admin.system',
+        'parentName'=> 'top',
         'name'      => '系统 system',
         'routeName' => '',
         'icon'      => '',
         'header'    => true,
     ],
         [
-            'navName' => 'admin.system.function',
+            'navName'   => 'admin.system.function',
             'parentName'=> 'admin.system',
             'name'      => '系统功能',
             'routeName' => '',
@@ -37,7 +37,7 @@ return [
             'header'    => false,
         ],
             [
-                'navName' => 'admin.system.function.system',
+                'navName'   => 'admin.system.function.system',
                 'parentName'=> 'admin.system.function',
                 'name'      => '系统设置',
                 'routeName' => 'admin.system',
@@ -45,7 +45,7 @@ return [
                 'header'    => false,
             ],
             [
-                'navName' => 'admin.system.function.config',
+                'navName'   => 'admin.system.function.config',
                 'parentName'=> 'admin.system.function',
                 'name'      => '配置管理',
                 'routeName' => 'admin.config',
@@ -53,15 +53,15 @@ return [
                 'header'    => false,
             ],
             [
-                'navName' => 'admin.system.function.upload',
+                'navName'   => 'admin.system.function.upload',
                 'parentName'=> 'admin.system.function',
                 'name'      => '上传管理',
-                'routeName' => 'admin.config',
+                'routeName' => 'admin.upload',
                 'icon'      => 'fa fa-upload',
                 'header'    => false,
             ],
         [
-            'navName' => 'admin.system.application',
+            'navName'   => 'admin.system.application',
             'parentName'=> 'admin.system',
             'name'      => '应用中心',
             'routeName' => '',
@@ -69,7 +69,7 @@ return [
             'header'    => false,
         ],
             [
-                'navName' => 'admin.system.application.model',
+                'navName'   => 'admin.system.application.model',
                 'parentName'=> 'admin.system.application',
                 'name'      => '模块扩展',
                 'routeName' => 'admin.model',
@@ -77,15 +77,7 @@ return [
                 'header'    => false,
             ],
             [
-                'navName' => 'admin.system.application.model',
-                'parentName'=> 'admin.system.application',
-                'name'      => '模块扩展',
-                'routeName' => 'admin.model',
-                'icon'      => 'fa fa-th-large',
-                'header'    => false,
-            ],
-            [
-                'navName' => 'admin.system.application.addon',
+                'navName'   => 'admin.system.application.addon',
                 'parentName'=> 'admin.system.application',
                 'name'      => '插件管理',
                 'routeName' => 'admin.addon',
@@ -93,7 +85,7 @@ return [
                 'header'    => false,
             ],
             [
-                'navName' => 'admin.system.application.theme',
+                'navName'   => 'admin.system.application.theme',
                 'parentName'=> 'admin.system.application',
                 'name'      => '主题管理',
                 'routeName' => 'admin.theme',

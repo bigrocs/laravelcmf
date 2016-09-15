@@ -1,11 +1,11 @@
-@if (isset($nav['uppercase']))
+@if ($nav['header'])
 						<li class="header">{{ $nav['name'] }}</li>
 						@if (isset($nav['subNav']))
 							{{-- 引入一级导航 --}}
 							@each('admin.layout.sidebarMenu', $nav['subNav'], 'nav')
 						@endif
 @else
-						@if (isset($nav['active']))
+						@if ($nav['active'])
 	                        <li class="treeview active">
 	                    @else
 	                    	<li class="treeview">
