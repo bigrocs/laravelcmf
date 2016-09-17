@@ -75,7 +75,7 @@
                 {{--<!-- Content Header (Page header) -->--}}
                 <section class="content-header">
                     <h1>
-                        General Form Elements
+                        {{ getNavTitle(config('adminNav')) }}
                         <small>Preview</small>
                       </h1>
                     <ol class="breadcrumb">

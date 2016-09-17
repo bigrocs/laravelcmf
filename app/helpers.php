@@ -30,7 +30,18 @@ if (!function_exists('getNav')) {
         return $NavObject->getNav($nav);
     }
 }
-
+if (!function_exists('getNavTitle')) {
+    /**
+     * [getNav 获取导航.]
+     * @param  [type] $nav [导航配置数组]
+     * @return [type]      [description]
+     */
+    function getNavTitle($nav)
+    {
+        $NavObject = new App\Models\Nav;
+        return $NavObject->getNavTitle($nav);
+    }
+}
 if (!function_exists('getUploadUrl')) {
     /**
      * [getUploadUrl 根据ID获取上传文件对象单条URL信息].
