@@ -32,13 +32,13 @@ class Nav extends Model
      *
      * @return [type] [description]
      */
-    public function getNavTitle($navs)
+    public function getTitle($navs)
     {
         $navCollect = $this->getActiveNavCollect($navs);
         $routeName = routeName(); //获取当前路由名称
         $navSubCollect = $navCollect->where('routeName', $routeName)->first(); //获取顶级导航
 
-        return $navSubCollect['name'];
+        return $navSubCollect['title'];
     }
     /**
      * 根据当前导航路由器名称 获取携带active状态导航合集.
