@@ -19,7 +19,6 @@ class Nav extends Model
     public function getNav($navs)
     {
         $navCollect = $this->getActiveNavCollect($navs);
-        $routeName = routeName(); //获取当前路由名称
         $navSubCollect = $navCollect->where('parentName', 'top'); //获取顶级导航
         $navData = $this->getTreeNav($navCollect, $navSubCollect);
 
@@ -40,6 +39,13 @@ class Nav extends Model
 
         return $navSubCollect['title'];
     }
+    public function getBreadcrumb($navs)
+    {
+        $navCollect = $this->getActiveNavCollect($navs);
+        $navSubCollect = $navCollect->where('active', true); //获取顶级导航
+        return $navSubCollect;
+    }
+
     /**
      * 根据当前导航路由器名称 获取携带active状态导航合集.
      *

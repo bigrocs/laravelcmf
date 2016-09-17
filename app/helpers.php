@@ -42,6 +42,18 @@ if (!function_exists('getPageTitle')) {
         return $NavObject->getPageTitle($nav);
     }
 }
+if (!function_exists('getBreadcrumb')) {
+    /**
+     * [getNav 获取导航.]
+     * @param  [type] $nav [导航配置数组]
+     * @return [type]      [description]
+     */
+    function getBreadcrumb($nav)
+    {
+        $NavObject = new App\Models\Nav;
+        return $NavObject->getBreadcrumb($nav);
+    }
+}
 if (!function_exists('getUploadUrl')) {
     /**
      * [getUploadUrl 根据ID获取上传文件对象单条URL信息].

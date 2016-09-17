@@ -75,13 +75,13 @@
                 {{--<!-- Content Header (Page header) -->--}}
                 <section class="content-header">
                     <h1>
-                        <i class="fa fa-wrench"></i>
                         {{ getPageTitle(config('adminNav')) }}
                     </h1>
                     <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li><a href="#">Forms</a></li>
-                        <li class="active">General Elements</li>
+                        <li><a href="{{ route('admin.index') }}"><i class="fa fa-dashboard"></i> 首页</a></li>
+                        @foreach (getBreadcrumb(config('adminNav')) as $breadcrumb)
+                            <li>{{ $breadcrumb['title'] }}</li>
+                        @endforeach
                     </ol>
                 </section>
                 {{--<!-- Main content -->--}}
