@@ -12,7 +12,7 @@ class Nav extends Model
      * @author BigRocs <bigrocs@qq.com>
      * @date   2016-04-22T14:30:11+0800
      *
-     * @param [array] $nav [当前菜单信息]
+     * @param [array] $nav [导航配置数组]
      *
      * @return [type] [description]
      */
@@ -27,7 +27,7 @@ class Nav extends Model
     /**
      * [getNavTitle 当前导航标题].
      *
-     * @param [type] $navs [description]
+     * @param [type] $navs [导航配置数组]
      *
      * @return [type] [description]
      */
@@ -39,6 +39,13 @@ class Nav extends Model
 
         return $navSubCollect['title'];
     }
+    /**
+     * [getBreadcrumb 获取面包屑导航].
+     *
+     * @param [type] $navs [导航配置数组]
+     *
+     * @return [type] [description]
+     */
     public function getBreadcrumb($navs)
     {
         $navCollect = $this->getActiveNavCollect($navs);

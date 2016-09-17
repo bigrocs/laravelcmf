@@ -1,6 +1,6 @@
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="tabbable-line ">
+                                    <div class="nav-tabs-custom">
                                         {{-- BEGIN Tab导航 --}}
                                         @if (!empty($tabNav))
                                         <ul class="nav nav-tabs ">

@@ -1,6 +1,6 @@
 @include('Builder.style')
                                                     @if (!empty($formItems))
-                                                    <div class="portlet light bordered">
+                                                    <div class="tab-pane active">
                                                     {!! Form::open(array('route'=>$postRoute,'method'=>'post','class'=>'form-horizontal form form-builder')) !!}
                                                         @foreach ($formItems as $Item)
                                                             {{-- BEGIN 根据样式加载不同from表单元素模板 --}}
@@ -14,11 +14,10 @@
                                                     {!! Form::close() !!}
                                                     </div>
                                                     @else
-                                                    <div class="portlet light bordered builder-data-empty text-center">
+                                                    <div class="tab-pane active builder-data-empty text-center">
                                                         <div class="empty-info">
                                                             <i class="fa fa-database"></i> 暂时没有数据<br>
                                                             <span class="small">本系统由 <a href="{{ config('config.websiteDomain') }}" class="text-muted" target="_blank">{{ config('config.productName') }}</a> v{{ config('config.currentVersion') }} 强力驱动</span>
                                                         </div>
                                                     </div>
                                                     @endif
-                                                    

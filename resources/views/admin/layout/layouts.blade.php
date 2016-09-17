@@ -80,8 +80,10 @@
                     <ol class="breadcrumb">
                         <li><a href="{{ route('admin.index') }}"><i class="fa fa-dashboard"></i> 首页</a></li>
                         @foreach (getBreadcrumb(config('adminNav')) as $breadcrumb)
+
                             <li>{{ $breadcrumb['title'] }}</li>
                         @endforeach
+
                     </ol>
                 </section>
                 {{--<!-- Main content -->--}}

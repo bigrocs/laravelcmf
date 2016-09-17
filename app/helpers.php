@@ -20,37 +20,46 @@ if (!function_exists('routeName')) {
 }
 if (!function_exists('getNav')) {
     /**
-     * [getNav 获取导航.]
-     * @param  [type] $nav [导航配置数组]
-     * @return [type]      [description]
+     * [getNav 获取导航.].
+     *
+     * @param [type] $nav [导航配置数组]
+     *
+     * @return [type] [description]
      */
     function getNav($nav)
     {
-        $NavObject = new App\Models\Nav;
+        $NavObject = new App\Models\Nav();
+
         return $NavObject->getNav($nav);
     }
 }
 if (!function_exists('getPageTitle')) {
     /**
-     * [getNav 获取导航.]
-     * @param  [type] $nav [导航配置数组]
-     * @return [type]      [description]
+     * [getNav 获取导航.].
+     *
+     * @param [type] $nav [导航配置数组]
+     *
+     * @return [type] [description]
      */
     function getPageTitle($nav)
     {
-        $NavObject = new App\Models\Nav;
+        $NavObject = new App\Models\Nav();
+
         return $NavObject->getPageTitle($nav);
     }
 }
 if (!function_exists('getBreadcrumb')) {
     /**
-     * [getNav 获取导航.]
-     * @param  [type] $nav [导航配置数组]
-     * @return [type]      [description]
+     * [getNav 获取面包屑导航.].
+     *
+     * @param [type] $nav [导航配置数组]
+     *
+     * @return [type] [description]
      */
     function getBreadcrumb($nav)
     {
-        $NavObject = new App\Models\Nav;
+        $NavObject = new App\Models\Nav();
+
         return $NavObject->getBreadcrumb($nav);
     }
 }
