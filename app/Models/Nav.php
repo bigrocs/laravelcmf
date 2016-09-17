@@ -32,7 +32,7 @@ class Nav extends Model
      *
      * @return [type] [description]
      */
-    public function getTitle($navs)
+    public function getPageTitle($navs)
     {
         $navCollect = $this->getActiveNavCollect($navs);
         $routeName = routeName(); //获取当前路由名称

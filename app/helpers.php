@@ -30,16 +30,16 @@ if (!function_exists('getNav')) {
         return $NavObject->getNav($nav);
     }
 }
-if (!function_exists('getTitle')) {
+if (!function_exists('getPageTitle')) {
     /**
      * [getNav 获取导航.]
      * @param  [type] $nav [导航配置数组]
      * @return [type]      [description]
      */
-    function getTitle($nav)
+    function getPageTitle($nav)
     {
         $NavObject = new App\Models\Nav;
-        return $NavObject->getTitle($nav);
+        return $NavObject->getPageTitle($nav);
     }
 }
 if (!function_exists('getUploadUrl')) {
