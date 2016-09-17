@@ -18,61 +18,19 @@ if (!function_exists('routeName')) {
         return app('router')->currentRouteName();
     }
 }
-if (!function_exists('getActiveNav')) {
+if (!function_exists('getNav')) {
     /**
-     * 根据当前导航路由器名称 获取携带active状态导航数组.
-     *
-     * @author BigRocs <bigrocs@qq.com>
-     * @date   2016-04-22T14:30:11+0800
-     *
-     * @param [array] $nav [当前菜单信息]
-     *
-     * @return [type] [description]
+     * [getNav 获取导航.]
+     * @param  [type] $nav [导航配置数组]
+     * @return [type]      [description]
      */
-    function getActiveNav($navs)
+    function getNav($nav)
     {
-        $navCollect = collect($navs); // 创建集合
-        $navSubCollect = $navCollect->where('parentName', 'top'); //获取顶级导航
-        $navData = getSubNav($navCollect, $navSubCollect);
-        return $navData;
+        $NavObject = new App\Models\Nav;
+        return $NavObject->getNav($nav);
     }
 }
-if (!function_exists('getSubNav')) {
-    /**
-     * [getSubNav 获取子导航].
-     *
-     * @param [type] $navCollect    [导航合集]
-     * @param [type] $navSubCollect [当前导航]
-     *
-     * @return [type] [description]
-     */
-    function getSubNav($navCollect, $navSubCollect)
-    {
-        $routeName = routeName(); //获取当前路由名称
-        foreach ($navSubCollect as $key => $nav) {
-            $nav['active'] = false;//设定全部导航状态关闭
-            $filtered = $navCollect->contains('parentName', $nav['navName']); //查找子分类是否存在
-            if ($filtered) {
-                $navSubCollect = $navCollect->where('parentName', $nav['navName']);
-                $navData[$key] = $nav;
-                $navData[$key]['subNav'] = getSubNav($navCollect, $navSubCollect); //加载子导航
-                // 根据子导航状态开启父导航状态
-                foreach ($navData[$key]['subNav'] as $k => $subNav) {
-                    if($subNav['active']){
-                        $navData[$key]['active'] = true;
-                    }
-                }
-            } else {
-                // 根据当期路由状态开启对应导航状态
-                if ($nav['routeName'] == $routeName) {
-                    $nav['active'] = true;
-                }
-                $navData[$key] = $nav; //不存在直接返回
-            }
-        }
-        return $navData;
-    }
-}
+
 if (!function_exists('getUploadUrl')) {
     /**
      * [getUploadUrl 根据ID获取上传文件对象单条URL信息].

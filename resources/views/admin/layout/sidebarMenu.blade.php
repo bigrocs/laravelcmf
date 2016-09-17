@@ -5,7 +5,7 @@
 							@each('admin.layout.sidebarMenu', $nav['subNav'], 'nav')
 						@endif
 @else
-						@if ($nav['active'])
+						@if (isset($nav['active']))
 	                        <li class="treeview active">
 	                    @else
 	                    	<li class="treeview">

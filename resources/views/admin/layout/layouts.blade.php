@@ -65,7 +65,7 @@
                     {{-- <!-- sidebar menu: : style can be found in sidebar.less --> --}}
                     <ul class="sidebar-menu">
                         {{--<!-- 导航位置定义 -->--}}
-                        @each('admin.layout.sidebarMenu', getActiveNav(config('adminNav')), 'nav')
+                        @each('admin.layout.sidebarMenu', getNav(config('adminNav')), 'nav')
                     </ul>
                 </section>
                 {{--<!-- /.sidebar -->--}}
