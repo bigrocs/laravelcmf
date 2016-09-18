@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="//cdn.bootcss.com/admin-lte/2.3.6/css/skins/_all-skins.min.css">
         {{-- 后台全局强制性的风格 END --}}
         {{-- 后台页面级别插件BEGIN --}}
-            @yield('pageCss')
+        @yield('pageCss')
         {{-- 后台页面级别插件END --}}
 @endsection
 
@@ -101,6 +101,6 @@
         <script src="//cdn.bootcss.com/admin-lte/2.3.6/js/app.min.js"></script>
         {{-- JS后台核心插件END --}}
         {{-- JS后台页面级别插件BEGIN --}}
-@yield('pageJs')
+        @yield('pageJs')
         {{-- JS后台页面级别插件END --}}
 @endsection

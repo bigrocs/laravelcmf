@@ -12,18 +12,3 @@
                                                     @endif
                                                 </div>
                                             </div>
-                                            <script type="text/javascript">
- 												$("#{{ $Item['name'] }}").bootstrapSwitch({
- 													onColor: "success",
- 													offColor: "danger",
-											      	onText: "开启",
-											      	offText: '关闭',
-											      	onSwitchChange: function(event, state) {
-											      		if(state){
-											      			$("input[name='{{ $Item['name'] }}']").val('on');
-											      		}else{
-											      			$("input[name='{{ $Item['name'] }}']").val('off');
-											      		}
-												      }
-											    });
-        									</script>   
