@@ -1,4 +1,7 @@
-@include('Builder.style')
+@section('pageCss')
+        {{-- builder全局CSS样式 --}}
+        <link  rel="stylesheet" href="{{ asset('css/builder.css') }}">
+@endsection
                             <div class="portlet light bordered builder-container">
                                 <div class="portlet-title">
                                     <div class="caption  util-btn-margin-bottom-5">
@@ -52,7 +55,7 @@
                                         <thead>
                                             <tr>
                                                 <th>
-                                                    <input type="checkbox" class="group-checkable" data-set="#sample_0 .checkboxes" > 
+                                                    <input type="checkbox" class="group-checkable" data-set="#sample_0 .checkboxes" >
                                                 </th>
                                                 @foreach ($tableColumnList as $tableColumn)
                                                     <th>{{ $tableColumn['title'] }}</th>
@@ -70,7 +73,7 @@
                                                                 <td>{!! $tableData[$tableColumn['name']] !!}</td>
                                                             @else
                                                                 <td>{{ $tableData[$tableColumn['name']] }}</td>
-                                                            @endif 
+                                                            @endif
                                                         @endforeach
                                                     </tr>
                                                 @endforeach
@@ -85,4 +88,4 @@
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>      
+                            </div>

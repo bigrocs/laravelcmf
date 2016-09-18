@@ -1,4 +1,4 @@
-@include('Builder.style')
+@include('Builder.formCss')
                                                     @if (!empty($formItems))
                                                     <div class="tab-pane active">
                                                     {!! Form::open(array('route'=>$postRoute,'method'=>'post','class'=>'form-horizontal form form-builder')) !!}
@@ -29,3 +29,4 @@
                                                         </div>
                                                     </div>
                                                     @endif
+@include('Builder.formJs')
