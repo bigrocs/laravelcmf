@@ -91,6 +91,12 @@
                     @yield('pageContent')
                 </section>
             </div>
+            <footer class="main-footer">
+                <div class="pull-right hidden-xs">
+                    <b>Version</b> {{ config('config.version') }}
+                </div>
+                <strong>Copyright © 2015-2016 <a href="{{ config('config.websiteDomain') }}">{{ config('config.author') }}</a>.</strong> All rights reserved.
+            </footer>
 @endsection
 @section('js')
         {{-- JS后台核心插件BEGIN --}}

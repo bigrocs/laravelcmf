@@ -25,7 +25,7 @@
                                                     <div class="tab-pane active builder-data-empty text-center">
                                                         <div class="empty-info">
                                                             <i class="fa fa-database"></i> 暂时没有数据<br>
-                                                            <span class="small">本系统由 <a href="{{ config('config.websiteDomain') }}" class="text-muted" target="_blank">{{ config('config.productName') }}</a> v{{ config('config.currentVersion') }} 强力驱动</span>
+                                                            <span class="small">本系统由 <a href="{{ config('config.websiteDomain') }}" class="text-muted" target="_blank">{{ config('config.productName') }}</a> v{{ config('config.version') }} 强力驱动</span>
                                                         </div>
                                                     </div>
                                                     @endif

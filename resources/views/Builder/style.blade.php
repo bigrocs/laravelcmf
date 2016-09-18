@@ -8,7 +8,7 @@
         padding: 130px 0;
         color: #555;
     }
-    
+
     .builder .builder-container .builder-table .table td {
         max-width: 600px;
         vertical-align: middle;
