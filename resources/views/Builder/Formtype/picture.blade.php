@@ -12,7 +12,7 @@
                                                 </div>
                                                 <div class="col-md-6 col-sm-8 col-xs-12">
                                                     <input type="hidden" name="{{ $Item['name'] }}" value="{{ $Item['value'] }}">
-                                                    <a class="btn green imageUpload" data-toggle="modal" href="#basic_{{ $Item['id'] }}" data-id="{{ $Item['id'] }}"><i class="fa fa-upload"></i> 上传图片</a>
+                                                    <a class="btn btn-info imageUpload" data-toggle="modal" href="#basic_{{ $Item['id'] }}" data-id="{{ $Item['id'] }}"><i class="fa fa-upload"></i> 上传图片</a>
                                                 </div>
                                                 <div class="col-md-6 col-sm-8 col-xs-12">
                                                     @if(!empty($Item['tip']))
@@ -63,7 +63,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div> 
+                                            </div>
         <script type="text/javascript">
                 $("#uploadDropzone_{{ $Item['id'] }}").dropzone({
                     url: "{{ route('admin.upload') }}",
@@ -102,4 +102,4 @@
                         });
                     }
                 });
-        </script>                                        
+        </script>

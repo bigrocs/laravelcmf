@@ -42,7 +42,7 @@ class SystemController extends Controller
                     ->setFormObjectAuto($adminConfigs)              // 设置表单项对象
                     ->getData();
         view()->share($htmlData);
-        // dd($htmlData);
+
         return view('admin.system');
     }
     /**

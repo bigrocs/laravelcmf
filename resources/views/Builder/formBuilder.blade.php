@@ -7,9 +7,17 @@
                                                             @include('Builder.FormType.'.$Item['type'])
                                                             {{-- END 根据样式加载不同from表单元素模板 --}}
                                                         @endforeach
-                                                        <div class="btn-group btn-group-lg btn-group-solid margin-bottom-10">
-                                                            <button type="submit" class="btn red ajax-post" target-form="form-builder">确定</button>
-                                                            <button type="button" class="btn green" onclick="javascript:history.back(-1);return false;">返回</button>
+                                                        <div class="row">
+                                                            <div class="col-md-6 col-sm-8">
+                                                                <div class="btn-group btn-group-justified">
+                                                                    <div class="btn-group">
+                                                                        <button type="submit" class="btn btn-info ajax-post" target-form="form-builder">确定</button>
+                                                                    </div>
+                                                                    <div class="btn-group">
+                                                                        <button type="submit" class="btn btn-warning" onclick="javascript:history.back(-1);return false;">返回</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     {!! Form::close() !!}
                                                     </div>

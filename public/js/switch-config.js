@@ -5,10 +5,10 @@ $('.make-switch').bootstrapSwitch({
     offText: '关闭',
     onSwitchChange: function(event, state) {
         var id = $(this).attr("id");
-        if(state){
-            $("input[name='"+id+"']").val('on');
-        }else{
-            $("input[name='"+id+"']").val('off');
+        if (state) {
+            $("input[name='" + id + "']").val('on');
+        } else {
+            $("input[name='" + id + "']").val('off');
         }
-      }
+    }
 });
