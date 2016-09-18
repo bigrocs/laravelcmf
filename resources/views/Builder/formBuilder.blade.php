@@ -1,10 +1,10 @@
-@include('Builder.formCss')
+@include('Builder.formPublic.formCss')
                                                     @if (!empty($formItems))
                                                     <div class="tab-pane active">
                                                     {!! Form::open(array('route'=>$postRoute,'method'=>'post','class'=>'form-horizontal form form-builder')) !!}
                                                         @foreach ($formItems as $Item)
                                                             {{-- BEGIN 根据样式加载不同from表单元素模板 --}}
-                                                            @include('Builder.FormType.'.$Item['type'])
+                                                            @include('Builder.formPublic.FormType.'.$Item['type'])
                                                             {{-- END 根据样式加载不同from表单元素模板 --}}
                                                         @endforeach
                                                         <div class="row">
@@ -29,4 +29,4 @@
                                                         </div>
                                                     </div>
                                                     @endif
-@include('Builder.formJs')
+@include('Builder.formPublic.formJs')
