@@ -1,6 +1,12 @@
 @section('pageCss')
-        {{-- builder全局CSS样式 --}}
-        <link  rel="stylesheet" href="{{ asset('css/builder.css') }}">
+        {{-- builderFrom全局CSS样式 --}}
+        <link  rel="stylesheet" href="{{ asset('vendor/builder/css/builder.css') }}">
+        {{-- pnotify通知消息CSS样式 --}}
+        <link href="//cdn.bootcss.com/pnotify/3.0.0/pnotify.min.css" rel="stylesheet">
+        <link href="//cdn.bootcss.com/pnotify/3.0.0/pnotify.buttons.min.css" rel="stylesheet">
+        {{-- animate动画效果CSS样式--}}
+        <link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+
     @foreach ($formItems as $Item)
         @if ($Item['type']=='switch')
 
