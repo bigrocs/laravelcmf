@@ -27,7 +27,7 @@
                                                                 <h4 class="modal-title"><i class="fa fa-picture-o"></i> 图片设置</h4>
                                                             </div>
                                                             <div class="modal-body">
-                                                                <div class="tabbable-custom ">
+                                                                <div class="nav-tabs-custom">
                                                                     <ul class="nav nav-tabs ">
                                                                             <li class="active">
                                                                                 <a href="#tab_img_1_{{ $Item['id'] }}" data-toggle="tab"><i class="fa fa-cloud-upload"></i>  本地上传 </a>
