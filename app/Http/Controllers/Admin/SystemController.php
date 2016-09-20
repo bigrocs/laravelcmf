@@ -64,10 +64,8 @@ class SystemController extends Controller
         }
 
         return response()->json([
-                'title' => '操作成功',
                 'message' => '保存成功!',
                 'status' => 'success',
-                'time' => date('H点i分s秒',time()),
                 'code' => 200,
             ], 200);
     }
