@@ -21,9 +21,11 @@
                                                 </div>
                                                 <div class="modal fade" id="basic_{{ $Item['id'] }}" tabindex="-1" role="basic_{{ $Item['id'] }}" aria-hidden="true">
                                                     <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                        <div class="box box-info">
+                                                            <div class="box-header with-border">
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">×</span>
+                                                                </button>
                                                                 <h4 class="modal-title"><i class="fa fa-picture-o"></i> 图片设置</h4>
                                                             </div>
                                                             <div class="modal-body">
@@ -57,49 +59,10 @@
 
                                                             </div>
                                                             <div class="modal-footer">
-                                                                <button type="button" class="btn btn-outline sbold blue" data-dismiss="modal">确定</button>
-                                                                <button type="button" class="btn btn-outline sbold red" data-dismiss="modal">取消</button>
+                                                                <button type="button" class="btn btn-info" data-dismiss="modal">确定</button>
+                                                                <button type="button" class="btn btn-warning" data-dismiss="modal">取消</button>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-        <script type="text/javascript">
-                $("#uploadDropzone_{{ $Item['id'] }}").dropzone({
-                    url: "{{ route('admin.upload') }}",
-                    maxFilesize: {{ config('adminConfig.ADMIN_PAGE_ROWS') }}, {{-- // MB --}}
-                    acceptedFiles: ".jpg,.jpeg,.png,.gif,.bmp",
-                    addRemoveLinks: true,
-                    clickable: true,
-                    autoProcessQueue: true, {{-- //关闭自动上传, 手动调度 --}}
-                    uploadMultiple: false,
-                    parallelUploads: 10, {{-- //最大并行处理量 --}}
-                    maxFiles: 1, {{-- //最大上传数量 --}}
-                    headers: {"X-CSRF-TOKEN": "{{ csrf_token() }}"},
-                    {{-- //插件消息翻译 --}}
-                    dictInvalidFileType: '上传图片格式错误',
-                    dictFileTooBig: '图片超出最大2M约束',
-                    dictMaxFilesExceeded: '超出最大上传数量',
-                    dictCancelUpload: '取消上传',
-                    dictRemoveFile: '去除文件',
-                    dictCancelUploadConfirmation: '确认取消上传',
-
-                    {{-- //监听 --}}
-                    init: function() {
-                        this.on("success", function(file,data) {
-                            {{-- //改变显示图片 --}}
-                            var $imgHtml = $(
-                                    '<div id="upload_box_{{ $Item['id'] }}" class="col-xs-12">'+
-                                        '<div class="alert thumbnail col-lg-2 col-md-3 col-sm-4 col-xs-6" role="alert">' +
-                                            '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>'+
-                                            '<img src="'+data.uploadData.url+'">'+
-                                        '</div>'+
-                                    '</div>'
-                                );
-                            $("#upload_box_{{ $Item['id'] }}").replaceWith( $imgHtml );
-                            {{-- //改变from表单图片ID --}}
-                            $("input[name='{{ $Item['name'] }}']").val(data.uploadData.id);
-                        });
-                    }
-                });
-        </script>

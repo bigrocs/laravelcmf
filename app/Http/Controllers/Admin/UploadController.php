@@ -4,23 +4,23 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Support\Facades\Input;
 use App\Http\Controllers\Controller;
-use App\Models\AdminUpload;
+use App\Models\Upload;
 use TablesBuilder;
 use Response;
 
 class UploadController extends Controller
 {
     /** @var AdminConfigRepository */
-    private $AdminUploadModel;
+    private $UploadModel;
 
-    public function __construct(AdminUpload $AdminUploadRepo)
+    public function __construct(Upload $UploadRepo)
     {
-        $this->AdminUploadModel = $AdminUploadRepo;
+        $this->UploadModel = $UploadRepo;
     }
 
     public function index()
     {
-        $uploads = $this->AdminUploadModel
+        $uploads = $this->UploadModel
                             ->where('status', '>=', 0)
                             ->get();
 
@@ -67,9 +67,9 @@ class UploadController extends Controller
     {
         $ids = Input::get('id');
         if ($status == 'delete') {
-            $this->AdminUploadModel->fileDelete($ids); // 删除文件
+            $this->UploadModel->fileDelete($ids); // 删除文件
         }
-        $response = $this->AdminUploadModel->setStatus($status, $ids);
+        $response = $this->UploadModel->setStatus($status, $ids);
 
         return response()->json($response);
     }
@@ -84,7 +84,7 @@ class UploadController extends Controller
     public function postImageUpload()
     {
         $imageData = Input::all();
-        $response = $this->AdminUploadModel->imageUpload($imageData);
+        $response = $this->UploadModel->imageUpload($imageData);
 
         return Response::json($response);
     }
@@ -99,7 +99,7 @@ class UploadController extends Controller
     public function postFileUpload()
     {
         $fileData = Input::all();
-        $response = $this->AdminUploadModel->fileUpload($fileData);
+        $response = $this->UploadModel->fileUpload($fileData);
 
         return Response::json($response);
     }

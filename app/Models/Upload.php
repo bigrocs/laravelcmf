@@ -10,11 +10,11 @@ use Storage;
 /**
  * Class Upload.
  */
-class AdminUpload extends Model
+class Upload extends Model
 {
     use CommonModel;
 
-    public $table = 'admin_uploads';
+    public $table = 'uploads';
 
     public $fillable = [
         'uid',
@@ -167,7 +167,9 @@ class AdminUpload extends Model
         $fileInfo['extension'] = $fileData['file']->getClientOriginalExtension();
         $fileInfo['md5'] = md5_file($fileRealPath);
         $fileInfo['sha1'] = sha1_file($fileRealPath);
+        $fileInfo['download'] = 0;
         $fileInfo['status'] = 1;
+        $fileInfo['sort'] = 0;
         $fileInfo['path'] = '/local/'.$mimeType.'/'.$fileHashName; //保存路径
         $fileInfo['disk'] = 'local'; //存储方式
         //end
