@@ -12,7 +12,16 @@
                                                 </div>
                                                 <div class="col-md-6 col-sm-8 col-xs-12">
                                                     <input type="hidden" name="{{ $Item['name'] }}" value="{{ $Item['value'] }}">
-                                                    <a class="btn btn-info imageUpload" data-toggle="modal" href="#basic_{{ $Item['id'] }}" data-id="{{ $Item['id'] }}"><i class="fa fa-upload"></i> 上传图片</a>
+                                                    <a class="btn btn-info imageUpload" data-toggle="modal" href="#basic_{{ $Item['id'] }}" data-id="{{ $Item['id'] }}"
+                                                        id="uploadDropzone"
+                                                        dropzoneName="{{ $Item['name'] }}"
+                                                        dropzoneId="{{ $Item['id'] }}"
+                                                        dropzoneMaxFiles= "1"
+                                                        dropzoneUrl="{{ route('admin.upload') }}"
+                                                        dropzoneMaxFilesize="{{ config('adminConfig.ADMIN_PAGE_ROWS') }}"
+                                                        dropzoneCsrfToken="{{ csrf_token() }}">
+                                                        <i class="fa fa-upload"></i> 上传图片
+                                                    </a>
                                                 </div>
                                                 <div class="col-md-6 col-sm-8 col-xs-12">
                                                     @if(!empty($Item['tip']))
@@ -40,7 +49,7 @@
                                                                     </ul>
                                                                     <div class="tab-content">
                                                                             <div class="tab-pane active" id="tab_img_1_{{ $Item['id'] }}">
-                                                                                <div class="dropzone dropzone-file-area" id="uploadDropzone_{{ $Item['id'] }}" style="min-height:0px;margin:0;">
+                                                                                <div class="dropzone dropzone-file-area" style="min-height:0px;margin:0;">
                                                                                     <div class="dz-message needsclick">
                                                                                         <p><i class="fa fa-upload"></i> 上传图片(支持拖拽)</p>
                                                                                     </div>

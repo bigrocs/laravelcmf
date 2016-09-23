@@ -76,7 +76,7 @@ if (!function_exists('getUploadUrl')) {
      */
     function getUploadUrl($id)
     {
-        $uploadObject = App\Models\AdminUpload::where(['id' => $id])->first();
+        $uploadObject = App\Models\Upload::where(['id' => $id])->first();
         if (!$uploadObject) {
             return asset('assets/apps/img/404.jpg');
         }
