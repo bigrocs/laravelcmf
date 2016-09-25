@@ -74,14 +74,14 @@ if (!function_exists('getUploadUrl')) {
      *
      * @return [type] [description]
      */
-    function getUploadUrl($id)
+    function getUploadData($id)
     {
         $uploadObject = App\Models\Upload::where(['id' => $id])->first();
         if (!$uploadObject) {
             return asset('assets/apps/img/404.jpg');
         }
 
-        return $uploadObject->url;
+        return $uploadObject;
     }
 }
 if (!function_exists('bytesFormat')) {

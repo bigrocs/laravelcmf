@@ -4,22 +4,34 @@
                                                 </div>
                                                 <div id="upload_box_{{ $Item['id'] }}" class="col-md-12">
                                                     @if (is_numeric($Item['value']))
-                                                    <div class="alert thumbnail col-lg-2 col-md-3 col-sm-4 col-xs-6" role="alert">
-                                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                                        <img src="{{ getUploadUrl($Item['value']) }}">
-                                                    </div>
+                                                    <div class=" col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                                                        <div class="box box-info">
+                                                            <div class="box-header with-border">
+                                                              <h3 class="box-title">{{ getUploadData($Item['value'])->name }}</h3>
+                                                              <div class="box-tools pull-right">
+                                                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                                                </button>
+                                                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                                              </div>
+                                                            </div>
+                                                            <div class="box-body">
+                                                                <img class="img-responsive" src="{{ getUploadData($Item['value'])->url }}">
+                                                            </div>
+                                                          </div>
+                                                      </div>
                                                     @endif
                                                 </div>
                                                 <div class="col-md-6 col-sm-8 col-xs-12">
                                                     <input type="hidden" name="{{ $Item['name'] }}" value="{{ $Item['value'] }}">
-                                                    <a class="btn btn-info imageUpload" data-toggle="modal" href="#basic_{{ $Item['id'] }}" data-id="{{ $Item['id'] }}"
-                                                        id="uploadDropzone"
+                                                    <a  data-toggle="modal" href="#basic_{{ $Item['id'] }}" data-id="{{ $Item['id'] }}"
+                                                        class="btn btn-info uploadDropzone"
                                                         dropzoneName="{{ $Item['name'] }}"
                                                         dropzoneId="{{ $Item['id'] }}"
                                                         dropzoneMaxFiles= "1"
                                                         dropzoneUrl="{{ route('admin.upload') }}"
                                                         dropzoneMaxFilesize="{{ config('adminConfig.ADMIN_PAGE_ROWS') }}"
-                                                        dropzoneCsrfToken="{{ csrf_token() }}">
+                                                        dropzoneCsrfToken="{{ csrf_token() }}"
+                                                        dropzoneAcceptedFiles=".jpg,.jpeg,.png,.gif,.bmp">
                                                         <i class="fa fa-upload"></i> 上传图片
                                                     </a>
                                                 </div>
@@ -49,7 +61,7 @@
                                                                     </ul>
                                                                     <div class="tab-content">
                                                                             <div class="tab-pane active" id="tab_img_1_{{ $Item['id'] }}">
-                                                                                <div class="dropzone dropzone-file-area" style="min-height:0px;margin:0;">
+                                                                                <div class="dropzone dropzone-file-area" id="dropzone_{{ $Item['id'] }}" style="min-height:0px;margin:0;">
                                                                                     <div class="dz-message needsclick">
                                                                                         <p><i class="fa fa-upload"></i> 上传图片(支持拖拽)</p>
                                                                                     </div>
