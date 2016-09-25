@@ -7,7 +7,7 @@
                                                     <div class=" col-lg-2 col-md-3 col-sm-4 col-xs-6">
                                                         <div class="box box-info">
                                                             <div class="box-header with-border">
-                                                              <h3 class="box-title">{{ getUploadData($Item['value'])->name }}</h3>
+                                                              <h3 class="box-title">{{ getUploadWhereOne($Item['value'])->name }}</h3>
                                                               <div class="box-tools pull-right">
                                                                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                                                                 </button>
@@ -15,7 +15,7 @@
                                                               </div>
                                                             </div>
                                                             <div class="box-body">
-                                                                <img class="img-responsive" src="{{ getUploadData($Item['value'])->url }}">
+                                                                <img class="img-responsive" src="{{ getUploadWhereOne($Item['value'])->url }}">
                                                             </div>
                                                           </div>
                                                       </div>

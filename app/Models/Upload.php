@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\CommonModel;
 use Storage;
 
 /**
@@ -102,7 +101,7 @@ class Upload extends Model
          *
          * @var [type]
          */
-        $validator = Validator::make($imageData, Upload::$imageRules, Upload::$imageMessages);
+        $validator = Validator::make($imageData, self::$imageRules, self::$imageMessages);
         if ($validator->fails()) {
             return [
                 'error' => true,
@@ -246,5 +245,24 @@ class Upload extends Model
         foreach ($fileObject as $key => $file) {
             Storage::delete($file->path);
         }
+    }
+    /**
+     * [getUploadWhereOne 获取上传文件其中一个].
+     *
+     * @param [type] $id [文件ID]
+     *
+     * @return [type] [description]
+     */
+    public function getUploadWhereOne($id)
+    {
+        $uploadObject = $this->where(['id' => $id])->first();
+        if (!$uploadObject) {
+            $uploadObject = (object) [
+                'name' => '未找到图片',
+                'url' => asset('assets/apps/img/404.jpg'),
+            ];
+        }
+
+        return $uploadObject;
     }
 }
