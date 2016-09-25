@@ -64,7 +64,7 @@ class SystemController extends Controller
         }
 
         return response()->json([
-                'message' => '保存成功!',
+                'message' => '系统设置保存成功!',
                 'status' => 'success',
                 'code' => 200,
             ], 200);

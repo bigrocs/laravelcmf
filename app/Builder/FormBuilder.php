@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace App\Builder;
 /**
  * Form表单构造器
@@ -11,6 +11,7 @@ class FormBuilder
     private $_tabNav 		= [];  								// 页面Tab导航
     private $_route;              						        // 表单提交路由
     private $_formItems 	= [];  								// 表单项目数据
+    private $_formType 	= [];  								    // 表单项所有样式
     private $_formAutoItems = [];                               // 表单自动项目数据
     private $_formData 		= [];  								// 表单数据
     private $_extraHtml     = [];            					// 额外功能代码
@@ -32,8 +33,8 @@ class FormBuilder
      * @date   2016-05-08T13:56:35+0800
      * @param  [type]                   $metaTitle [标题文本]
      */
-    
-    public function setMetaTitle($metaTitle) 
+
+    public function setMetaTitle($metaTitle)
     {
         $this->_metaTitle = $metaTitle;
         return $this;
@@ -46,7 +47,7 @@ class FormBuilder
      * @param    [type]                   $tabList       [Tab列表  array('title' => '标题', 'href' => 'http://www.bigrocs.com']
      * @param    [type]                   $currentTab    [当前tab]
      */
-    public function setTabNav($tabList,$currentTab) 
+    public function setTabNav($tabList,$currentTab)
     {
         $this->_tabNav = [
             'tabList' => $tabList,
@@ -68,7 +69,7 @@ class FormBuilder
      * @param  [$data]                   ['options']    [表单options]
      * @param  [$data]                   ['property']   [表单项额外属性]
      */
-    public function addFormItem($data) 
+    public function addFormItem($data)
     {
         $formItem['name']      = @$data['name'];
         $formItem['title']     = @$data['title'];
@@ -80,7 +81,7 @@ class FormBuilder
         $formItem['property']  = @$data['property'];
         $this->_formItems[]    = $formItem;
         return $this;
-    }    
+    }
 
     /**
      * [setFormObjectAuto 自动设置表单项数组]
@@ -108,7 +109,7 @@ class FormBuilder
      * @date   2016-05-08T14:43:35+0800
      * @param  [type]                   $template [视图模板]
      */
-    public function setTemplate($template) 
+    public function setTemplate($template)
     {
         $this->_template = $template;
         return $this;
@@ -148,6 +149,10 @@ class FormBuilder
                     $item['value'] = $this->_formData[$item['name']];
             }
         };
+        //获取活用使用的表单元素样式
+        foreach ($this->_formItems as $items) {
+            $this->_formType[$items['type']] = $items['type'];
+        }
         return $this;
     }
     /**
@@ -156,14 +161,15 @@ class FormBuilder
      * @date   2016-05-08T14:10:07+0800
      * @return [type]                   [description]
      */
-    public function getData() 
+    public function getData()
     {
-        $this->compileFormData();//对表单数据进行编译	
+        $this->compileFormData();//对表单数据进行编译
     	return	[
     				'metaTitle' => $this->_metaTitle,		// 页面标题
     				'tabNav'	=> $this->_tabNav,     		// 页面Tab导航
                     'postRoute' => $this->_route,           // 页面提交路由
     				'formItems'	=> $this->_formItems,     	// 表单项目
+                    'formType'	=> $this->_formType,        // 表单项所有样式
                     'extraHtml' => $this->_extraHtml,       // 设置额外功能代码
                     'view'      => $this->_view,            // 视图模板
     				'template'	=> $this->_template,		// 视图模板
