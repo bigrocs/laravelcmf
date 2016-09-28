@@ -172,7 +172,7 @@ class AdminConfigTableSeeder extends Seeder
             'name'      => 'CONFIG_GROUP_LIST',
             'value'     => '基本,系统',
             'group' 	=> '1',
-            'type'      => 'array',
+            'type'      => 'tags',
             'icon'      => '',
             'property'  => '',
             'options'   => '',

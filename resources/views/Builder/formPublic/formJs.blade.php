@@ -17,6 +17,9 @@
         {{--拖拽上传文件加载JS文件--}}
         <script src="//cdn.bootcss.com/dropzone/4.3.0/min/dropzone.min.js"></script>
         <script src="{{ asset('vendor/builder/js/dropzone-config.js') }}"></script>
+        @elseif ($Item == 'tags')
+        {{--tagsinput文件加载JS文件--}}
+        <script src="//cdn.bootcss.com/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
         @endif
     @endforeach
 @endsection

@@ -18,5 +18,5 @@
                                                     @if(!empty($Item['tip']))
                                                     <span class="check-tips small">{{ $Item['tip'] }}</span>
                                                     @endif
-                                                </div> 
+                                                </div>
                                             </div>

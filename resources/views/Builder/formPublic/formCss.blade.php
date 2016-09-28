@@ -14,6 +14,9 @@
         @elseif ($Item == 'picture')
         {{--拖拽上传文件加载CSS文件--}}
         <link rel="stylesheet" href="//cdn.bootcss.com/dropzone/4.3.0/min/dropzone.min.css">
+        @elseif ($Item == 'tags')
+        {{--tagsinput加载CSS文件--}}
+        <link href="//cdn.bootcss.com/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" rel="stylesheet">
         @endif
     @endforeach
 @endsection
