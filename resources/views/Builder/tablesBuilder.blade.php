@@ -1,10 +1,13 @@
 @section('pageCss')
-        {{-- builder全局CSS样式 --}}
-        <link  rel="stylesheet" href="{{ asset('css/builder.css') }}">
+        {{-- builderFrom全局CSS样式 --}}
+        <link  rel="stylesheet" href="{{ asset('vendor/builder/css/builder.css') }}">
+
+        <link href="//cdn.bootcss.com/datatables/1.10.12/css/dataTables.bootstrap.min.css" rel="stylesheet">
 @endsection
+
                             <div class="portlet light bordered builder-container">
-                                <div class="portlet-title">
-                                    <div class="caption  util-btn-margin-bottom-5">
+                                <div class="box-header with-border">
+                                    <div class="box-title">
                                         {{-- 工具栏按钮 --}}
                                         @if (isset($topButtonList))
                                             @foreach ($topButtonList as $tableData)
@@ -12,13 +15,13 @@
                                             @endforeach
                                         @endif
                                     </div>
-                                    <div class="actions">
+                                    <div class="pull-right ">
                                         <div class="btn-group">
-                                            <a class="btn red btn-outline btn-circle" href="javascript:;" data-toggle="dropdown">
+                                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
                                                 <i class="fa fa-share"></i>
                                                 <span class="hidden-xs"> 导出 </span>
                                                 <i class="fa fa-angle-down"></i>
-                                            </a>
+                                            </button>
                                             <ul class="dropdown-menu pull-right" id="sample_0_tools">
                                                 <li>
                                                      <a href="javascript:;" data-action="0" class="tool-action">
@@ -50,7 +53,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="portlet-body builder-table">
+                                <div class="box-body builder-table">
                                     <table class="table table-striped table-bordered table-hover table-checkable order-column" id="sample_0">
                                         <thead>
                                             <tr>
@@ -89,3 +92,9 @@
                                     </table>
                                 </div>
                             </div>
+@section('pageJs')
+        {{-- builderFrom全局JS脚本 --}}
+        <script src="//cdn.bootcss.com/datatables/1.10.12/js/jquery.dataTables.min.js"></script>
+        <script src="//cdn.bootcss.com/datatables/1.10.12/js/dataTables.bootstrap.min.js"></script>
+        <script src="{{ asset('vendor/builder/js/table-datatables-managed.js') }}"></script>
+@endsection

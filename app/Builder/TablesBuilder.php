@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace App\Builder;
 /**
  * Form表单构造器
@@ -33,8 +33,8 @@ class TablesBuilder
      * @date   2016-05-08T13:56:35+0800
      * @param  [type]                   $metaTitle [标题文本]
      */
-    
-    public function setMetaTitle($metaTitle) 
+
+    public function setMetaTitle($metaTitle)
     {
         $this->_metaTitle = $metaTitle;
         return $this;
@@ -62,7 +62,7 @@ class TablesBuilder
                 // 预定义按钮属性以简化使用
                 $button['title'] = '新增';
                 $button['icon']  = '<i class="fa fa-plus"></i>';
-                $button['class'] = 'btn blue-madison';
+                $button['class'] = 'btn btn-primary';
                 $button['href']  = route($this->_route.'.add');
 
                 /**
@@ -84,7 +84,7 @@ class TablesBuilder
                 $button['title'] = '启用';
                 $button['icon']  = '<i class="fa fa-check"></i>';
                 $button['target-form'] = $this->_tableDataListKey;
-                $button['class'] = 'btn green-meadow ajax-post confirm';
+                $button['class'] = 'btn btn-success ajax-post confirm';
                 $button['href']  = route($this->_route.'.status', ['status' => 'resume']);
 
                 // 如果定义了属性数组则与默认的进行合并，详细使用方法参考上面的新增按钮
@@ -100,7 +100,7 @@ class TablesBuilder
                 $button['title'] = '禁用';
                 $button['icon']  = '<i class="fa fa-ban"></i>';
                 $button['target-form'] = $this->_tableDataListKey;
-                $button['class'] = 'btn yellow-crusta ajax-post confirm';
+                $button['class'] = 'btn btn-warning ajax-post confirm';
                 $button['href']  = route($this->_route.'.status', ['status' => 'forbid']);
 
                 // 如果定义了属性数组则与默认的进行合并，详细使用方法参考上面的新增按钮
@@ -116,7 +116,7 @@ class TablesBuilder
                 $button['title'] = '回收';
                 $button['icon']  = '<i class="fa fa-trash"></i>';
                 $button['target-form'] = $this->_tableDataListKey;
-                $button['class'] = 'btn grey-cascade ajax-post confirm';
+                $button['class'] = 'btn btn-warning ajax-post confirm';
                 $button['href']  = route($this->_route.'.status', ['status' => 'recycle']);
 
                 // 如果定义了属性数组则与默认的进行合并，详细使用方法参考上面的新增按钮
@@ -132,7 +132,7 @@ class TablesBuilder
                 $button['title'] = '还原';
                 $button['icon']  = '<i class="fa fa-refresh"></i>';
                 $button['target-form'] = $this->_tableDataListKey;
-                $button['class'] = 'btn purple-plum ajax-post confirm';
+                $button['class'] = 'btn btn-success ajax-post confirm';
                 $button['href']  = route($this->_route.'.status', ['status' => 'restore']);
 
                 // 如果定义了属性数组则与默认的进行合并，详细使用方法参考上面的新增按钮
@@ -148,7 +148,7 @@ class TablesBuilder
                 $button['title'] = '删除';
                 $button['icon']  = '<i class="fa fa-trash"></i>';
                 $button['target-form'] = $this->_tableDataListKey;
-                $button['class'] = 'btn red-sunglo ajax-post confirm';
+                $button['class'] = 'btn btn-danger ajax-post confirm';
                 $button['href']  = route($this->_route.'.status', ['status' => 'delete']);
 
                 // 如果定义了属性数组则与默认的进行合并，详细使用方法参考上面的新增按钮
@@ -184,7 +184,7 @@ class TablesBuilder
      * @param    [type]                   $tabList       [Tab列表  array('title' => '标题', 'href' => 'http://www.bigrocs.com']
      * @param    [type]                   $currentTab    [当前tab]
      */
-    public function setTabNav($tabList,$currentTab) 
+    public function setTabNav($tabList,$currentTab)
     {
         $this->_tabNav = [
             'tabList' => $tabList,
@@ -192,7 +192,7 @@ class TablesBuilder
         ];
         return $this;
     }
-    public function setRoute($route) 
+    public function setRoute($route)
     {
         $this->_route = $route;
         return $this;
@@ -276,7 +276,7 @@ class TablesBuilder
                 // 预定义按钮属性以简化使用
                 $button['title'] = '编辑';
                 $button['icon']  = '<i class="fa fa-edit"></i>';
-                $button['class'] = 'btn btn-xs blue-madison';
+                $button['class'] = 'btn btn-xs btn-info';
                 /**
                  * [$this->_tableDataListKey 路由设置规则]
                  * 例：Route::get ('/config/edit/{id}' , 'ConfigController@edit'               )->name('adminConfig.edit');
@@ -307,12 +307,12 @@ class TablesBuilder
                 $button['type'] = 'forbid';
                 $button['0']['title'] = '启用';
                 $button['0']['icon']  = '<i class="fa fa-check"></i>';
-                $button['0']['class'] = 'btn btn-xs green-meadow ajax-get confirm';
+                $button['0']['class'] = 'btn btn-xs btn-success ajax-get confirm';
                 $button['0']['href']  = route($this->_route.'.status', ['status' => 'resume',$this->_tableDataListKey => '__dataId__']);
 
                 $button['1']['title'] = '禁用';
                 $button['1']['icon']  = '<i class="fa fa-ban"></i>';
-                $button['1']['class'] = 'btn btn-xs yellow-crusta ajax-get confirm';
+                $button['1']['class'] = 'btn btn-xs btn-warning ajax-get confirm';
                 $button['1']['href']  = route($this->_route.'.status', ['status' => 'forbid',$this->_tableDataListKey => '__dataId__']);
 
                 // 这个按钮定义好了把它丢进按钮池里
@@ -323,12 +323,12 @@ class TablesBuilder
                 $button['type'] = 'hide';
                 $button['2']['title'] = '显示';
                 $button['2']['icon']  = '<i class="fa fa-check"></i>';
-                $button['2']['class'] = 'btn btn-xs green-meadow ajax-get confirm';
+                $button['2']['class'] = 'btn btn-xs btn-success ajax-get confirm';
                 $button['2']['href']  = route($this->_route.'.status', ['status' => 'show',$this->_tableDataListKey => '__dataId__']);
 
                 $button['1']['title'] = '隐藏';
                 $button['1']['icon']  = '<i class="fa fa-slash"></i>';
-                $button['1']['class'] = 'btn btn-xs grey-cascade ajax-get confirm';
+                $button['1']['class'] = 'btn btn-xs btn-warning ajax-get confirm';
                 $button['1']['href']  = route($this->_route.'.status', ['status' => 'hide',$this->_tableDataListKey => '__dataId__']);
 
                 // 这个按钮定义好了把它丢进按钮池里
@@ -338,7 +338,7 @@ class TablesBuilder
                 // 预定义按钮属性以简化使用
                 $button['title'] = '回收';
                 $button['icon']  = '<i class="fa fa-trash"></i>';
-                $button['class'] = 'btn btn-xs grey-cascade ajax-get confirm';
+                $button['class'] = 'btn btn-xs btn-warning ajax-get confirm';
                 $button['href']  = route($this->_route.'.status', ['status' => 'recycle',$this->_tableDataListKey => '__dataId__']);
 
                 // 如果定义了属性数组则与默认的进行合并，详细使用方法参考上面的顶部按钮
@@ -353,7 +353,7 @@ class TablesBuilder
                 // 预定义按钮属性以简化使用
                 $button['title'] = '还原';
                 $button['icon']  = '<i class="fa fa-refresh"></i>';
-                $button['class'] = 'btn btn-xs purple-plum ajax-get confirm';
+                $button['class'] = 'btn btn-xs btn-success ajax-get confirm';
                 $button['href']  = route($this->_route.'.status', ['status' => 'restore',$this->_tableDataListKey => '__dataId__']);
 
                 // 如果定义了属性数组则与默认的进行合并，详细使用方法参考上面的顶部按钮
@@ -368,7 +368,7 @@ class TablesBuilder
                 // 预定义按钮属性以简化使用
                 $button['title'] = '删除';
                 $button['icon']  = '<i class="fa fa-trash"></i>';
-                $button['class'] = 'btn btn-xs red-sunglo ajax-get confirm';
+                $button['class'] = 'btn btn-xs btn-danger ajax-get confirm';
                 $button['href']  = route($this->_route.'.status', ['status' => 'delete',$this->_tableDataListKey => '__dataId__']);
 
                 // 如果定义了属性数组则与默认的进行合并，详细使用方法参考上面的顶部按钮
@@ -402,11 +402,11 @@ class TablesBuilder
      * @date   2016-05-08T14:43:35+0800
      * @param  [type]                   $template [视图模板]
      */
-    public function setTemplate($template) 
+    public function setTemplate($template)
     {
         $this->_template = $template;
         return $this;
-    } 
+    }
     /**
      * [compileTableData 对表格数据进行编译]
      * @Author   BigRocs                  BigRocs@qq.com
@@ -527,7 +527,7 @@ class TablesBuilder
      * @date   2016-05-08T14:10:07+0800
      * @return [type]                   [description]
      */
-    public function getData() 
+    public function getData()
     {
         $this->compileTableData();//对表格数据进行编译
     	return	[

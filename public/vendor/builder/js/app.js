@@ -158,8 +158,8 @@ var App = function() {
     }
     return {
         init: function() {
-            bodyAjaxPost() //处理AJAX-POST请求
-            bodyAjaxGet() //处理AJAX-GET请求
+            bodyAjaxPost(); //处理AJAX-POST请求
+            bodyAjaxGet(); //处理AJAX-GET请求
         },
     };
 }();
